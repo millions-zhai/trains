@@ -44,7 +44,7 @@ public class AdjacencyList implements GraphAction{
     @Override
     public int distance(int v1, int v2) throws GraphException{
         if(null==nodeList[v1]){
-            throw new GraphException("No such edge");
+            throw new GraphException("NO SUCH ROUTE");
         }
         ListIterator<Edge> iterators=nodeList[v1].listIterator();
         while(iterators.hasNext()){
@@ -53,7 +53,7 @@ public class AdjacencyList implements GraphAction{
                 return e.distance;
             }
         }
-        throw new GraphException("No such edge");
+        throw new GraphException("NO SUCH ROUTE");
     }
 
     @Override
