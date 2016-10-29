@@ -1,4 +1,4 @@
-import org.junit.Test;
+import junit.framework.TestCase;
 
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -6,9 +6,9 @@ import java.util.LinkedList;
 /**
  * Created by Administrator on 2016/10/26.
  */
-public class CommonTest {
+public class CommonTest extends TestCase {
 
-    @Test
+
     public void test(){
         System.out.println(tr('A'));
     }
@@ -16,7 +16,7 @@ public class CommonTest {
         return Character.getNumericValue(v) - 10;
     }
 
-    @Test
+
     public void test2(){
         String s="AB5, BC4, CD8, DC8, DE6, AD5, CE2, EB3, AE7";
         String[] ss=s.split("[\\s,][\\s]");
@@ -26,7 +26,7 @@ public class CommonTest {
 
     }
 
-    @Test
+
     public void test03(){
         LinkedList[] linkedLists=new LinkedList[27];
 
