@@ -85,7 +85,7 @@ public class TrainMap extends Graph{
     }
 
     /**
-     * 问题6，最大停止的节点次数
+     * 问题6，最大停止的次数
      */
     public Object countRouteByMaxStop(char start,char end,int maxStop){
         int crms=0;

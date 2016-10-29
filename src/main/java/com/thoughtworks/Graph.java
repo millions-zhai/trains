@@ -14,9 +14,9 @@ import java.util.NoSuchElementException;
 public class Graph extends AdjacencyList {
 
     /**
-     * 内部类，用于统计各个节点的状态
+     * 内部类，用于记录节点的状态
      */
-    public class Status{
+    private class Status{
         int node;
         int distance;
         boolean done;
@@ -108,7 +108,7 @@ public class Graph extends AdjacencyList {
      * @return               路径总数
      */
     public int countRouteLimitDistance(int start,int end,int maxDistance) throws GraphException {
-       return countPaths(start,end,maxDistance,false).length;
+        return countPaths(start,end,maxDistance,false).length;
     }
 
     /**
@@ -164,7 +164,7 @@ public class Graph extends AdjacencyList {
             }
 
             if(current.node == end ) {                    //发现了一条路径，记录下来
-                distances.add(new Integer(current.distance));
+                distances.add(current.distance);
             }
         }
 
@@ -173,7 +173,7 @@ public class Graph extends AdjacencyList {
 
     private int [] listToArray(LinkedList list)
     {
-        int [] array = new int[list.size()];		//create return list
+        int [] array = new int[list.size()];
         int i;
         for( i = 0; !list.isEmpty(); i++)
             array[i] = ((Integer)list.removeFirst()).intValue();

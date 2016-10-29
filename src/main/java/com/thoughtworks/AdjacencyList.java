@@ -57,10 +57,7 @@ public class AdjacencyList implements GraphAction{
     }
 
     @Override
-    public LinkedList getNerghbors(int v) throws GraphException{
-        if(null==nodeList[v]){
-            throw new GraphException("No such edge");
-        }
+    public LinkedList getNerghbors(int v) {
         if(null==nodeList[v]){
             nodeList[v]=new LinkedList<Edge>();
         }

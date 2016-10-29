@@ -15,24 +15,6 @@
             <version>3.8.1</version>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>RELEASE</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>RELEASE</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>RELEASE</version>
-            <scope>test</scope>
-        </dependency>
     </dependencies>
     <build>
         <plugins>
@@ -43,7 +25,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>com.tw.App</mainClass>
+                            <mainClass>com.thoughtworks.MyTrain</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

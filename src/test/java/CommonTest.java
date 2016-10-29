@@ -1,5 +1,8 @@
 import org.junit.Test;
 
+import java.util.Iterator;
+import java.util.LinkedList;
+
 /**
  * Created by Administrator on 2016/10/26.
  */
@@ -23,4 +26,26 @@ public class CommonTest {
 
     }
 
+    @Test
+    public void test03(){
+        LinkedList[] linkedLists=new LinkedList[27];
+
+        LinkedList<Integer> linkedList=new LinkedList<Integer>();
+        linkedList.add(2);
+        linkedList.add(3);
+        linkedList.add(4);
+
+        Iterator l=linkedList.listIterator();
+        while (l.hasNext()){
+            System.out.println(l.next());
+        }
+
+        Integer first= linkedList.removeFirst();
+        System.out.println(first);
+
+        Iterator lt=linkedList.listIterator();
+        while (lt.hasNext()){
+            System.out.println(lt.next());
+        }
+    }
 }

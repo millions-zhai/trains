@@ -7,7 +7,6 @@ import junit.framework.TestCase;
  */
 public class MapTest extends TestCase{
 
-
     public void test1(){
         TrainMap trainMap=new TrainMap("AB2, BA3, BD5, BE7, DB11, EB13, CE17, EC19, DE23, ED29, CF31, " +
                 "FC37, EF41, FE43, FA53, AF59, DA61, AD67, EA71, AE73");
@@ -26,7 +25,6 @@ public class MapTest extends TestCase{
         System.out.println("Output #3: " + trainMap.routeDistance("ADC"));
         System.out.println("Output #4: " + trainMap.routeDistance("AEBCD"));
         System.out.println("Output #5: " + trainMap.routeDistance("AED"));
-
 
         System.out.println("Output #6: " + trainMap.countRouteByMaxStop('C','C',3));
         System.out.println("Output #7: " + trainMap.countRouteByExactStop('A','C',4));

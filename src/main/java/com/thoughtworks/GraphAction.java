@@ -17,5 +17,5 @@ public interface GraphAction {
     int distance(int v1,int v2) throws GraphException;
 
 
-    LinkedList getNerghbors(int v) throws GraphException;
+    LinkedList getNerghbors(int v);
 }
