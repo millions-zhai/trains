@@ -33,4 +33,15 @@ public class MapTest extends TestCase{
         System.out.println("Output #10: " + trainMap.countRouteLimitDistance('C','C',29));
     }
 
+    public void test3(){
+        TrainMap trainMap=new TrainMap("AB5, BC4, CD8, DC8, DE6, AD5, CE2, EB3, AE7");
+        trainMap.deepForeach();
+    }
+
+    public void test4(){
+        TrainMap trainMap=new TrainMap("AB5, BC4, CD8, DC8, DE6, AD5, CE2, EB3, AE7");
+        trainMap.foreachBywidth();
+    }
+
+
 }

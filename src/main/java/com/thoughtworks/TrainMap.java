@@ -1,6 +1,7 @@
 package com.thoughtworks;
 
 import java.io.*;
+import java.util.LinkedList;
 
 /**
  * Created by Administrator on 2016/10/26.
@@ -116,4 +117,5 @@ public class TrainMap extends Graph{
         }
         return count;
     }
+
 }

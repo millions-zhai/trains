@@ -1,9 +1,7 @@
 package com.thoughtworks;
 
 
-import java.util.LinkedList;
-import java.util.ListIterator;
-import java.util.NoSuchElementException;
+import java.util.*;
 
 /**
  * Created by Administrator on 2016/10/26.
@@ -180,4 +178,84 @@ public class Graph extends AdjacencyList {
             array[i] = ((Integer)list.removeFirst()).intValue();
         return array;
     }
+
+    /**
+     * 深度遍历
+     */
+    public void deepForeach(){
+        int start=1;
+        Status[] statuses=new Status[maxNodes];
+        LinkedList queue=new LinkedList();
+        int current=start;
+        statuses[current]=new Status(start,true);
+        System.out.println(current);
+        while(true){
+            LinkedList<Edge> linkedList=getNerghbors(current);
+            ListIterator iterator=linkedList.listIterator();
+            boolean next=false;
+            while(iterator.hasNext()){
+                Edge edge=(Edge) iterator.next();
+                if(next==true){
+                    queue.add(edge);
+                }
+                if(null==statuses[edge.node]){
+                    statuses[edge.node]=new Status(edge.node,false);
+                }
+                if(null !=edge && !next && statuses[edge.node].done==false){
+                    statuses[edge.node].done=true;
+                    next=true;
+                    current=edge.node;
+                    System.out.println(edge.node);
+                }
+            }
+
+            if(false==next){
+                Edge edge=(Edge) queue.removeFirst();
+                if(!statuses[edge.node].done){
+                    current=edge.node;
+                }
+            }
+            if(queue.isEmpty()){
+                break;
+            }
+
+        }
+
+    }
+
+
+
+    /**
+     * 广度遍历
+     */
+    public void foreachBywidth(){
+
+        int current=2;
+        LinkedList queue=new LinkedList();
+        Status[] statuses=new Status[maxNodes];
+        statuses[current]=new Status(current,true);
+        System.out.println(current);
+        while(true) {
+            LinkedList list = getNerghbors(current);
+            ListIterator iterator = list.listIterator();
+            boolean isSee=false;
+            while(iterator.hasNext()){
+                Edge edge=(Edge) iterator.next();
+                if(null==statuses[edge.node]){
+                    statuses[edge.node]=new Status(edge.node,true);
+                    System.out.println(edge.node);
+                    queue.add(edge.node);
+                    isSee=true;
+                }
+            }
+            if(queue.isEmpty()){
+                break;
+            }
+            if(!isSee){
+                current=(Integer)queue.removeFirst();
+            }
+        }
+
+    }
+
 }
