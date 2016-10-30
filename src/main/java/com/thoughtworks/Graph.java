@@ -62,6 +62,7 @@ public class Graph extends AdjacencyList {
 
             status[current].done=true; //当前这个节点我们已近找到最近的的路径
 
+            //防止第一次迭代时，current==end==start这种情况，所以如果有这种情况，那么就当我们没有看到它
             if(current==end){
                 status[current]=null;
             }
